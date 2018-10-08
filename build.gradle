@@ -1,0 +1,13 @@
+plugins {
+    id "java"
+    id "org.springframework.boot" version "1.5.4.RELEASE"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile group: 'org.slf4j', name:'slf4j-api', version: '1.7.2'
+}
