@@ -4,6 +4,9 @@ applications:
   path: build/libs/pal-tracker.jar
   random-route: true
   memory : 768M
-  instances : 3
+  instances : 1
+  routes:
+  -route: apps.pikes.pal.pivotal.io
+
   env:
-    WELCOME_MESSAGE: Hello from Cloud Foundry
+    WELCOME_MESSAGE: Hello from the review environment
