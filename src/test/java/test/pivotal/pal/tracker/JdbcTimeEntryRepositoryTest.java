@@ -22,7 +22,7 @@ public class JdbcTimeEntryRepositoryTest {
     private JdbcTemplate jdbcTemplate;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         MysqlDataSource dataSource = new MysqlDataSource();
         dataSource.setUrl(System.getenv("SPRING_DATASOURCE_URL"));
 
