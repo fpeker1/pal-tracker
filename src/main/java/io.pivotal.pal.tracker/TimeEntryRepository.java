@@ -14,5 +14,5 @@ public interface TimeEntryRepository {
 
     public TimeEntry update(long userId, TimeEntry tm);
 
-    public ResponseEntity<TimeEntry> delete(long l);
+    public void delete(long l);
 }
