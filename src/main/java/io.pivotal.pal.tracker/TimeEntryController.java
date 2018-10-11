@@ -30,6 +30,7 @@ public class TimeEntryController {
     public ResponseEntity<?> create(@RequestBody TimeEntry timeEntryToCreate) {
 
         TimeEntry timeEntry = tmr.create(timeEntryToCreate);
+        
         return new ResponseEntity(timeEntry, HttpStatus.CREATED);
     }
 
