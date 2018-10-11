@@ -1,6 +1,8 @@
 package io.pivotal.pal.tracker;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.metrics.CounterService;
+import org.springframework.boot.actuate.metrics.GaugeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +15,20 @@ public class TimeEntryController {
 
     @Autowired
     TimeEntryRepository tmr;
+
+    private CounterService counter;
+    private GaugeService gauge;
+    private TimeEntryRepository timeEntriesRepo;
+
+    public TimeEntryController(
+            TimeEntryRepository timeEntriesRepo,
+            CounterService counter,
+            GaugeService gauge
+    ) {
+        this.timeEntriesRepo = timeEntriesRepo;
+        this.counter = counter;
+        this.gauge = gauge;
+    }
 
     public TimeEntryController(TimeEntryRepository tmr) {
         this.tmr = tmr;
